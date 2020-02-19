@@ -68,11 +68,13 @@ public class LeapYear {
    * @param args
    */
   public static void main(String[] args) {
-    if (args.length < 0){
+    if (args.length <= 0){
       System.err.println("NOT ENOUGH COMMAND LINE ARGUMENTS");
+      System.exit(1);
     }
     if (args.length > 1){
       System.err.println("TOO MANY COMMAND LINE ARGUMENTS");
+      System.exit(1);
     }
     int year = Integer.parseInt(args[0]);
     LeapYear leapy = new LeapYear(year);
