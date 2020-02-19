@@ -32,7 +32,8 @@ public class LeapYearTest
     public void isPositiveNumberDivisibleBy400LeapYear(){
         int year = 2000;
         LeapYear sample = createLeapYear(year);
-        assertThat(sample.determineLeapYear(), equalTo(1));
+        sample.determineLeapYear();
+        assertThat(sample.getIsLeapYear(), equalTo(1));
     }
 
     /**
@@ -44,7 +45,8 @@ public class LeapYearTest
     public void isPositiveNumberDivisibleBy100ButNot400NotLeapYear(){
         int year = 1700;
         LeapYear sample = createLeapYear(year);
-        assertThat(sample.determineLeapYear(), equalTo(0));
+        sample.determineLeapYear();
+        assertThat(sample.getIsLeapYear(), equalTo(0));
     }
 
     /**
@@ -56,7 +58,8 @@ public class LeapYearTest
     public void isPositiveNumberDivisibleBy4ButNot100LeapYear(){
         int year = 2008;
         LeapYear sample = createLeapYear(year);
-        assertThat(sample.determineLeapYear(), equalTo(1));
+        sample.determineLeapYear();
+        assertThat(sample.getIsLeapYear(), equalTo(1));
     }
 
     /**
@@ -68,7 +71,8 @@ public class LeapYearTest
     public void isPositiveNumberNotDivisibleBy4NotLeapYear(){
         int year = 2019;
         LeapYear sample = createLeapYear(year);
-        assertThat(sample.determineLeapYear(), equalTo(0));
+        sample.determineLeapYear();
+        assertThat(sample.getIsLeapYear(), equalTo(0));
     }
 
     /**
@@ -80,7 +84,8 @@ public class LeapYearTest
     public void isNegativeNumberDivisibleBy400LeapYear(){
         int year = -2000;
         LeapYear sample = createLeapYear(year);
-        assertThat(sample.determineLeapYear(), equalTo(1));
+        sample.determineLeapYear();
+        assertThat(sample.getIsLeapYear(), equalTo(1));
     }
 
     /**
@@ -92,7 +97,8 @@ public class LeapYearTest
     public void isNegativeNumberDivisibleBy100ButNot400NotLeapYear(){
         int year = -1700;
         LeapYear sample = createLeapYear(year);
-        assertThat(sample.determineLeapYear(), equalTo(0));
+        sample.determineLeapYear();
+        assertThat(sample.getIsLeapYear(), equalTo(0));
     }
 
     /**
@@ -104,7 +110,8 @@ public class LeapYearTest
     public void isNegativeNumberDivisibleBy4ButNot100LeapYear(){
         int year = -2008;
         LeapYear sample = createLeapYear(year);
-        assertThat(sample.determineLeapYear(), equalTo(1));
+        sample.determineLeapYear();
+        assertThat(sample.getIsLeapYear(), equalTo(1));
     }
 
     /**
@@ -116,7 +123,8 @@ public class LeapYearTest
     public void isNegativeNumberNotDivisibleBy4NotLeapYear(){
         int year = -2019;
         LeapYear sample = createLeapYear(year);
-        assertThat(sample.determineLeapYear(), equalTo(0));
+        sample.determineLeapYear();
+        assertThat(sample.getIsLeapYear(), equalTo(0));
     }
 
     /**

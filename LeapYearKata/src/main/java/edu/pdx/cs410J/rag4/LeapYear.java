@@ -13,7 +13,7 @@ public class LeapYear {
    */
   public LeapYear(int year) {
     if (year == 0){ // if sample year is 0, throw an exception as 0 cannot be divisible by anything
-      throw new IllegalArgumentException("Cannot determine divisibility of then number 0.");
+      throw new IllegalArgumentException("Cannot determine divisibility of the number 0.");
     }
     this.year = year; // initialize
     this.isLeapYear = 0; // initialize
@@ -45,15 +45,19 @@ public class LeapYear {
       return 0;
     }*/
     if (this.year % 400 == 0){
+      this.isLeapYear = 1;
       return 1;
     }
     if ((this.year % 4 == 0) && (this.year % 100 != 0)){
+      this.isLeapYear = 1;
       return 1;
     }
     if (this.year % 4 != 0){
+      this.isLeapYear = 0;
       return 0;
     }
     if ((this.year % 100 == 0) && (this.year % 400 != 0)){
+      this.isLeapYear = 0;
       return 0;
     }
     return 0;
@@ -64,7 +68,21 @@ public class LeapYear {
    * @param args
    */
   public static void main(String[] args) {
-    System.err.println("Missing command line arguments");
+    if (args.length < 0){
+      System.err.println("NOT ENOUGH COMMAND LINE ARGUMENTS");
+    }
+    if (args.length > 1){
+      System.err.println("TOO MANY COMMAND LINE ARGUMENTS");
+    }
+    int year = Integer.parseInt(args[0]);
+    LeapYear leapy = new LeapYear(year);
+    leapy.determineLeapYear();
+    if(leapy.getIsLeapYear() == 1){
+      System.out.println(leapy.getYear() + " IS A LEAP YEAR");
+    }
+    else{
+      System.out.println(leapy.getYear() + " IS NOT A LEAP YEAR");
+    }
     System.exit(1);
   }
 }
